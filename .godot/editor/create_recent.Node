@@ -1,2 +1,11 @@
-Camera2D
 TileMap
+Timer
+AudioStreamPlayer2D
+Node2D
+ColorRect
+HBoxContainer
+TextureRect
+Control
+CanvasLayer
+CanvasGroup
+Camera2D
