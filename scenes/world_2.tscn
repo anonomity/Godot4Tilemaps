@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://fl1tun4c0f76"]
+[gd_scene load_steps=11 format=3 uid="uid://gib6hltrr2rb"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_kaqr7"]
-[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="2_u5uv6"]
-[ext_resource type="AudioStream" uid="uid://m7gfhjwc3hqw" path="res://sounds/hoeing.mp3" id="3_mag8w"]
-[ext_resource type="AudioStream" uid="uid://cdmsuua7ecc2d" path="res://sounds/pop.mp3" id="4_picgc"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_e2vyf"]
+[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="2_h8fq3"]
+[ext_resource type="AudioStream" uid="uid://m7gfhjwc3hqw" path="res://sounds/hoeing.mp3" id="3_jxn5f"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_ytobb"]
+[ext_resource type="AudioStream" uid="uid://cdmsuua7ecc2d" path="res://sounds/pop.mp3" id="4_haldf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ligyu"]
-texture = ExtResource("2_u5uv6")
+texture = ExtResource("2_h8fq3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2314,20 +2315,20 @@ custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_ligyu")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ubn7"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_h8fq3")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_048bl"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_h8fq3")
 region = Rect2(192, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4mnv"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_h8fq3")
 region = Rect2(176, 16, 16, 16)
 
 [node name="World" type="Node2D"]
 rotation = -0.000695561
-script = ExtResource("1_kaqr7")
+script = ExtResource("1_e2vyf")
 metadata/_edit_horizontal_guides_ = [79.0]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2357,9 +2358,11 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(65528, 655360, 18, 65527, 524288, 18, 131062, 524288, 18, 196598, 524288, 21, 196599, 327680, 20, 196600, 393216, 20, 131064, 589824, 20, 131065, 393216, 19, 65529, 720896, 18, 131066, 720896, 18, 196602, 393216, 21, 196603, 196608, 21, 196601, 589824, 21, 131063, 327680, 19, 262135, 524288, 21, 262136, 458752, 20, 327672, 0, 20, -262126, 720896, 18, -262127, 524288, 18, -196591, 524288, 19, -196590, 393216, 19, -131054, 589824, 20, -131053, 720896, 20, -196589, 393216, 18, -196588, 196608, 21, -65519, 655360, 21, 17, 0, 20, -131055, 327680, 19, -131056, 524288, 18, -65520, 524288, 21, -65517, 720896, 21, -65518, 589824, 21, -327672, 655360, 18, -327673, 524288, 18, -262137, 262144, 20, -196601, 0, 19, -196599, 524288, 19, -262135, 327680, 20, -262136, 589824, 21, -327671, 655360, 18, -327670, 655360, 18, -327669, 720896, 18, -262133, 720896, 21, -262134, 393216, 20, -196598, 720896, 20, -131062, 720896, 20, -65526, 720896, 21, -65527, 524288, 21, -131063, 524288, 19, -131065, 0, 20, 720889, 524288, 21, 720890, 589824, 21, 720891, 720896, 21, 655356, 589824, 21, 655357, 589824, 21, 655358, 720896, 21, 655355, 589824, 19, 655354, 655360, 18, 655353, 524288, 18, 589820, 655360, 18, 589821, 327680, 19, 589822, 393216, 20, 589823, 589824, 21, 524288, 720896, 21, 589819, 524288, 18, 524286, 655360, 18, 524287, 655360, 18, 458752, 720896, 18, 524285, 524288, 18)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("3_ytobb")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(6.99515, 7.00487)
-zoom = Vector2(2.167, 2.167)
+zoom = Vector2(3.172, 3.172)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -2436,7 +2439,7 @@ texture = SubResource("AtlasTexture_r4mnv")
 [node name="sound_effects" type="Node2D" parent="."]
 
 [node name="farm" type="AudioStreamPlayer2D" parent="sound_effects"]
-stream = ExtResource("3_mag8w")
+stream = ExtResource("3_jxn5f")
 
 [node name="seed_pop" type="AudioStreamPlayer2D" parent="sound_effects"]
-stream = ExtResource("4_picgc")
+stream = ExtResource("4_haldf")
