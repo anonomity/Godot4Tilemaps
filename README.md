@@ -8,7 +8,7 @@
 if you'd like to use the assets for commercial use, you can purchase a liscense for (3.99) here:
 
 	ITCH LINK:
-		
+		https://jackie-codes.itch.io/paradise-asset-pack
 		
 
 
