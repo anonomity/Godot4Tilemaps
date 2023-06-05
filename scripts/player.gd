@@ -25,14 +25,16 @@ func _physics_process(delta):
 
 
 func update_animation_parameters():
-#	if(velocity == Vector2.ZERO):
-#		animation_tree["parameters/conditions/idle"] = true
-#
-#	else:
-#		animation_tree["parameters/conditions/idle"] = false
+	if(velocity == Vector2.ZERO):
+		animation_tree["parameters/conditions/is_idle"] = true
+		animation_tree["parameters/conditions/is_moving"] = false
+	else:
+		animation_tree["parameters/conditions/is_idle"] = false
+		animation_tree["parameters/conditions/is_moving"] = true
 
 	
 	
 	if direction != Vector2.ZERO:
 		animation_tree["parameters/idle/blend_position"] = direction
+		animation_tree["parameters/walk/blend_position"] = direction
 	
