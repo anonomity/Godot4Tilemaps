@@ -1,9 +1,10 @@
+Camera2D
+TileMap
 AnimationTree
 AnimationPlayer
 Sprite2D
 CollisionShape2D
 CharacterBody2D
-TileMap
 Timer
 AudioStreamPlayer2D
 Node2D
@@ -13,4 +14,3 @@ TextureRect
 Control
 CanvasLayer
 CanvasGroup
-Camera2D
