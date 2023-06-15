@@ -1,3 +1,8 @@
+ColorRect
+TextureRect
+HBoxContainer
+Control
+CanvasLayer
 Camera2D
 TileMap
 AnimationTree
@@ -8,9 +13,4 @@ CharacterBody2D
 Timer
 AudioStreamPlayer2D
 Node2D
-ColorRect
-HBoxContainer
-TextureRect
-Control
-CanvasLayer
 CanvasGroup
