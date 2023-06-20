@@ -1,4 +1,2 @@
-res://scene/UI.tscn
-res://scripts/UI.gd
 res://scene/world.tscn
 res://scripts/world.gd

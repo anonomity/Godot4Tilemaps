@@ -1,3 +1,4 @@
+Timer
 ColorRect
 TextureRect
 HBoxContainer
@@ -10,7 +11,6 @@ AnimationPlayer
 Sprite2D
 CollisionShape2D
 CharacterBody2D
-Timer
 AudioStreamPlayer2D
 Node2D
 CanvasGroup
