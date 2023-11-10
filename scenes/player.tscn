@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://nt74txyyhp2d"]
+[gd_scene load_steps=28 format=3 uid="uid://nt74txyyhp2d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_88qcy"]
 [ext_resource type="Texture2D" uid="uid://1tsrkrwoexmj" path="res://assets/new_character.png" id="2_saggl"]
@@ -300,20 +300,18 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_5v436")
 states/walk/position = Vector2(435.333, 84.6667)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_pmqne"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_l4f8u"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fa30v")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_x3jor"]
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_88qcy")
 SPEED = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -10)
 texture = ExtResource("2_saggl")
 hframes = 24
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yni73")
 
@@ -325,7 +323,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_pxaul")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_x3jor")
 parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
 parameters/idle/blend_position = Vector2(0, 0)
