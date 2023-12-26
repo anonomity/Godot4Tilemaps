@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Godot4Tilemaps"
-config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.png"
 
 [display]
 
