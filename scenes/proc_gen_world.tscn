@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhptvycu3kb8x"]
+
+[ext_resource type="Script" path="res://proc_gen_world.gd" id="1_bdevv"]
+[ext_resource type="TileSet" uid="uid://0c6kxpetkkr0" path="res://data/tileset.tres" id="2_5e5w1"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_eowgc"]
+
+[sub_resource type="Gradient" id="Gradient_y5bgd"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5)
+colors = PackedColorArray(0.217716, 0.414628, 0.55, 1, 0.169919, 0.396875, 0.148271, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b7j00"]
+noise_type = 0
+cellular_distance_function = 3
+cellular_jitter = -4.105
+cellular_return_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ve5r"]
+color_ramp = SubResource("Gradient_y5bgd")
+noise = SubResource("FastNoiseLite_b7j00")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_awwj8"]
+noise_type = 0
+frequency = 0.3513
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0a6k0"]
+noise = SubResource("FastNoiseLite_awwj8")
+
+[node name="proc_gen_world" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bdevv")
+noise_texture = SubResource("NoiseTexture2D_8ve5r")
+tree_noise_texture = SubResource("NoiseTexture2D_0a6k0")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("2_5e5w1")
+format = 2
+layer_0/z_index = -1
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array()
+layer_3/y_sort_enabled = true
+layer_3/y_sort_origin = 16
+layer_3/tile_data = PackedInt32Array()
+
+[node name="Player" parent="." instance=ExtResource("3_eowgc")]
+SPEED = 300.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(7, 302)
