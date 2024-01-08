@@ -37,17 +37,24 @@ tree_noise_texture = SubResource("NoiseTexture2D_0a6k0")
 y_sort_enabled = true
 tile_set = ExtResource("2_5e5w1")
 format = 2
+layer_0/name = "water"
 layer_0/z_index = -1
+layer_1/name = "ground"
 layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array()
-layer_2/y_sort_enabled = true
+layer_2/name = "ground2"
+layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array()
+layer_3/name = "cliff"
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 16
 layer_3/tile_data = PackedInt32Array()
+layer_4/name = "environment"
+layer_4/y_sort_enabled = true
+layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_eowgc")]
 SPEED = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(7, 302)
+position = Vector2(0, -6)
