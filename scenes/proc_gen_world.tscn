@@ -36,16 +36,12 @@ layer_0/name = "water"
 layer_0/z_index = -1
 layer_1/name = "ground_1"
 layer_1/z_index = -1
-layer_1/tile_data = PackedInt32Array()
 layer_2/name = "ground 2"
 layer_2/z_index = -1
-layer_2/tile_data = PackedInt32Array()
 layer_3/name = "cliff"
 layer_3/y_sort_enabled = true
-layer_3/tile_data = PackedInt32Array()
 layer_4/name = "environment"
 layer_4/y_sort_enabled = true
-layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_x3phy")]
 

@@ -70,7 +70,7 @@ func generate_world():
 			
 			tile_map.set_cell(water_layer, Vector2(x,y), source_id, water_atlas)
 	tile_map.set_cells_terrain_connect(ground_1_layer, sand_tiles_arr,terrain_sand_int, 0)
-	tile_map.set_cells_terrain_connect(ground_1_layer, grass_tiles_arr,terrain_grass_int, 0)
+	tile_map.set_cells_terrain_connect(ground_2_layer, grass_tiles_arr,terrain_grass_int, 0)
 	tile_map.set_cells_terrain_connect(cliff_layer, cliff_tiles_arr,terrain_cliff_int, 0)
 
 	print("min: ", noise_val_arr.min())
