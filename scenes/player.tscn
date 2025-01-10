@@ -307,6 +307,7 @@ SPEED = 100.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -10)
 texture = ExtResource("2_saggl")
+flip_h = true
 hframes = 24
 frame = 1
 
@@ -321,9 +322,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_r8onw")
-}
 tree_root = SubResource("AnimationNodeStateMachine_pxaul")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false

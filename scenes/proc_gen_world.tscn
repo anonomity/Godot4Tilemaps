@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgbtofaw6bc70"]
+[gd_scene load_steps=9 format=3 uid="uid://dgbtofaw6bc70"]
 
 [ext_resource type="Script" path="res://scripts/proc_gen_world.gd" id="1_ajf7a"]
 [ext_resource type="TileSet" uid="uid://cikokysmabvnd" path="res://data/tileset.tres" id="2_ocs8n"]
@@ -10,21 +10,42 @@ offsets = PackedFloat32Array(0, 0.498188, 0.688406, 0.889493)
 colors = PackedColorArray(0.24585, 0.371001, 0.841146, 1, 0.839294, 0.877604, 0.276611, 1, 0.188124, 0.984375, 0.0863237, 1, 0.453125, 0.272398, 0.098045, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_monuh"]
-noise_type = 4
-seed = 3
-domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_de67p"]
 color_ramp = SubResource("Gradient_2r0d6")
 noise = SubResource("FastNoiseLite_monuh")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_miw7d"]
+frequency = 0.35
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n2j6v"]
+noise = SubResource("FastNoiseLite_miw7d")
+
 [node name="proc_gen_world" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ajf7a")
 noise_height_text = SubResource("NoiseTexture2D_de67p")
+noise_tree_text = SubResource("NoiseTexture2D_n2j6v")
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = ExtResource("2_ocs8n")
 format = 2
+layer_0/name = "water"
+layer_0/z_index = -1
+layer_1/name = "ground_1"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "ground 2"
+layer_2/z_index = -1
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "cliff"
+layer_3/y_sort_enabled = true
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "environment"
+layer_4/y_sort_enabled = true
+layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_x3phy")]
 
