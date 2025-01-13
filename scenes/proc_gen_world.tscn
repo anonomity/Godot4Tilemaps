@@ -28,20 +28,33 @@ script = ExtResource("1_ajf7a")
 noise_height_text = SubResource("NoiseTexture2D_de67p")
 noise_tree_text = SubResource("NoiseTexture2D_n2j6v")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="water" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+use_parent_material = true
 tile_set = ExtResource("2_ocs8n")
-format = 2
-layer_0/name = "water"
-layer_0/z_index = -1
-layer_1/name = "ground_1"
-layer_1/z_index = -1
-layer_2/name = "ground 2"
-layer_2/z_index = -1
-layer_3/name = "cliff"
-layer_3/y_sort_enabled = true
-layer_4/name = "environment"
-layer_4/y_sort_enabled = true
+
+[node name="ground_1" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+use_parent_material = true
+tile_set = ExtResource("2_ocs8n")
+
+[node name="ground 2" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+use_parent_material = true
+tile_set = ExtResource("2_ocs8n")
+
+[node name="cliff" type="TileMapLayer" parent="TileMap"]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("2_ocs8n")
+
+[node name="environment" type="TileMapLayer" parent="TileMap"]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("2_ocs8n")
 
 [node name="Player" parent="." instance=ExtResource("3_x3phy")]
 

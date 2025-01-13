@@ -8,18 +8,15 @@ var tree_noise : Noise
 var width : int = 100
 var height : int = 100
 
-@onready var tile_map = $TileMap
+@onready var water_tilemaplayer: TileMapLayer = $TileMap/water
+@onready var ground_1_tilemaplayer: TileMapLayer = $TileMap/ground_1
+@onready var ground_2_tilemaplayer: TileMapLayer = $"TileMap/ground 2"
+@onready var cliff_tilemaplayer: TileMapLayer = $TileMap/cliff
+@onready var environment_tilemaplayer: TileMapLayer = $TileMap/environment
 
 var noise_val_arr = []
 
 var source_id = 0
-
-#LAYERS
-var water_layer = 0
-var ground_1_layer = 1
-var ground_2_layer = 2
-var cliff_layer = 3
-var environment_layer = 3
 
 var water_atlas = Vector2i(0,1)
 var land_atlas  = Vector2i(0,0)
@@ -53,25 +50,23 @@ func generate_world():
 			# placing ground
 			if noise_val >= 0.0:
 				if noise_val > 0.05 and noise_val < 0.17 and tree_noise_val > 0.7:
-					tile_map.set_cell(environment_layer, Vector2i(x,y), source_id, palm_tree_atlas_arr.pick_random())
+					environment_tilemaplayer.set_cell(Vector2i(x,y), source_id, palm_tree_atlas_arr.pick_random())
 				
 				if noise_val > 0.2:
 					grass_tiles_arr.append(Vector2i(x,y))
 					
 					if noise_val > 0.25:
 						if noise_val < 0.35 and tree_noise_val > 0.8:
-							tile_map.set_cell(environment_layer, Vector2i(x,y), source_id, oak_tree_atlas)
-						tile_map.set_cell(ground_2_layer, Vector2i(x,y), source_id, grass_atlas_arr.pick_random())
+							environment_tilemaplayer.set_cell(Vector2i(x,y), source_id, oak_tree_atlas)
+						ground_2_tilemaplayer.set_cell( Vector2i(x,y), source_id, grass_atlas_arr.pick_random())
 					if noise_val > 0.4:
 						cliff_tiles_arr.append(Vector2i(x,y))
 				sand_tiles_arr.append(Vector2i(x,y))
 			
-			
-			
-			tile_map.set_cell(water_layer, Vector2(x,y), source_id, water_atlas)
-	tile_map.set_cells_terrain_connect(ground_1_layer, sand_tiles_arr,terrain_sand_int, 0)
-	tile_map.set_cells_terrain_connect(ground_2_layer, grass_tiles_arr,terrain_grass_int, 0)
-	tile_map.set_cells_terrain_connect(cliff_layer, cliff_tiles_arr,terrain_cliff_int, 0)
+			water_tilemaplayer.set_cell(Vector2(x,y), source_id, water_atlas)
+	ground_1_tilemaplayer.set_cells_terrain_connect(sand_tiles_arr,terrain_sand_int, 0)
+	ground_2_tilemaplayer.set_cells_terrain_connect(grass_tiles_arr,terrain_grass_int, 0)
+	cliff_tilemaplayer.set_cells_terrain_connect(cliff_tiles_arr,terrain_cliff_int, 0)
 
 	print("min: ", noise_val_arr.min())
 	print("max: ", noise_val_arr.max())
