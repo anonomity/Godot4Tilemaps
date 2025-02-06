@@ -301,12 +301,14 @@ states/walk/position = Vector2(435.333, 84.6667)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_pmqne"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_l4f8u"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fa30v")]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_88qcy")
 SPEED = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -10)
+y_sort_enabled = true
 texture = ExtResource("2_saggl")
+offset = Vector2(0, -10.01)
 flip_h = true
 hframes = 24
 frame = 1

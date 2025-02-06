@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://okmi3rysf426"
-path="res://.godot/imported/new_cliff.png-65d293951273dfe4c49e3c1f9042e193.ctex"
+uid="uid://lhiptm4aocrc"
+path="res://.godot/imported/simple_clip.png-fe2760054e93dcad406fbf0dac886d06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new_cliff.png"
-dest_files=["res://.godot/imported/new_cliff.png-65d293951273dfe4c49e3c1f9042e193.ctex"]
+source_file="res://assets/simple_clip.png"
+dest_files=["res://.godot/imported/simple_clip.png-fe2760054e93dcad406fbf0dac886d06.ctex"]
 
 [params]
 
