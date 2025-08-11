@@ -1,8 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhptvycu3kb8x"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://proc_gen_world.gd" id="1_bdevv"]
 [ext_resource type="TileSet" uid="uid://0c6kxpetkkr0" path="res://data/tileset.tres" id="2_5e5w1"]
 [ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_eowgc"]
+=======
+[ext_resource type="Script" uid="uid://c5xkep7tpjvva" path="res://scripts/proc_gen_world.gd" id="1_ajf7a"]
+[ext_resource type="TileSet" uid="uid://cikokysmabvnd" path="res://data/tileset.tres" id="2_ocs8n"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_x3phy"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Gradient" id="Gradient_y5bgd"]
 interpolation_mode = 1

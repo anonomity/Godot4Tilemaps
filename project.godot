@@ -11,13 +11,28 @@ config_version=5
 [application]
 
 config/name="Godot4Tilemaps"
+<<<<<<< Updated upstream
 config/features=PackedStringArray("4.2", "Forward Plus")
+=======
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> Stashed changes
 config/icon="res://icon.png"
 
 [display]
 
 window/stretch/mode="viewport"
 
+<<<<<<< Updated upstream
+=======
+[dotnet]
+
+project/assembly_name="Godot4Tilemaps"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/bitmask_automation/plugin.cfg")
+
+>>>>>>> Stashed changes
 [input]
 
 farm={

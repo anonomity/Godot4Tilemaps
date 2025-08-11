@@ -1,0 +1,114 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwkcdrg34nj40"]
+
+[ext_resource type="Script" uid="uid://uko5wqkb3uiy" path="res://addons/bitmask_automation/template_ui.gd" id="1_f5ivy"]
+
+[node name="TemplateUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5ivy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Atlas Sources"
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SourceSelect" type="ItemList" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+auto_width = true
+auto_height = true
+fixed_icon_size = Vector2i(64, 64)
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Selected Source"
+horizontal_alignment = 1
+
+[node name="SourceTextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Template"
+horizontal_alignment = 1
+
+[node name="TemplateSelect" type="OptionButton" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TemplateTextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PickTemplateButton" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Select Template"
+
+[node name="ApplyButton" type="Button" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Apply Template to Source"
+
+[node name="DoneLabel" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Done!"
+horizontal_alignment = 1
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(0, 36)
+ok_button_text = "Open"
+file_mode = 0
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/PanelContainer/SourceSelect" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/PickTemplateButton" to="." method="_on_pick_template_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

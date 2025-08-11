@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf8rr06wuwtlg"]
+
+[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="1_4g8ma"]
+[ext_resource type="Script" uid="uid://b0pokqymqrga6" path="res://Tiles/Logic/choppable.gd" id="2_uqkfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqkfy"]
+atlas = ExtResource("1_4g8ma")
+region = Rect2(193.57, 36.2552, 44.6083, 60.4124)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4g8ma"]
+radius = 3.39218
+height = 7.20243
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_uqkfy")
+offset = Vector2(-1.47, -26.48)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.38419e-07, -2)
+rotation = 0.506145
+skew = 0.596903
+shape = SubResource("CapsuleShape2D_4g8ma")
+
+[node name="Choppable" type="Area2D" parent="."]
+script = ExtResource("2_uqkfy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Choppable"]
+polygon = PackedVector2Array(6, -26, 7, -19, 6, -15, 4, -12, 0, -9, -2, -4, -2, 1, 2, 1, 6, -4, 13, -14, 14, -21, 13, -25, 12, -28)
