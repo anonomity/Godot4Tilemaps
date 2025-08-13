@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://nt74txyyhp2d"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_88qcy"]
+[ext_resource type="Script" uid="uid://cl0fj8x8snn2q" path="res://scripts/player.gd" id="1_88qcy"]
 [ext_resource type="Texture2D" uid="uid://1tsrkrwoexmj" path="res://assets/new_character.png" id="2_saggl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yni73"]
@@ -220,15 +220,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8onw"]
 _data = {
-"RESET": SubResource("Animation_mqw7g"),
-"idle_down": SubResource("Animation_21sph"),
-"idle_left": SubResource("Animation_kblo4"),
-"idle_right": SubResource("Animation_c7gdq"),
-"idle_up": SubResource("Animation_sfy0w"),
-"walk_down": SubResource("Animation_shwt3"),
-"walk_left": SubResource("Animation_2fjsg"),
-"walk_right": SubResource("Animation_krbn2"),
-"walk_up": SubResource("Animation_h5krl")
+&"RESET": SubResource("Animation_mqw7g"),
+&"idle_down": SubResource("Animation_21sph"),
+&"idle_left": SubResource("Animation_kblo4"),
+&"idle_right": SubResource("Animation_c7gdq"),
+&"idle_up": SubResource("Animation_sfy0w"),
+&"walk_down": SubResource("Animation_shwt3"),
+&"walk_left": SubResource("Animation_2fjsg"),
+&"walk_right": SubResource("Animation_krbn2"),
+&"walk_up": SubResource("Animation_h5krl")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s231d"]

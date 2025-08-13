@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh7b82edcjrji"]
+
+[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="1_4g8ma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqkfy"]
+atlas = ExtResource("1_4g8ma")
+region = Rect2(194.756, 35.4082, 44.5589, 61.8589)
+
+[node name="tree" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uqkfy")
+offset = Vector2(0, -27.655)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, -20, 4, -13, -3, -4, -3, -1, 1, 0, 6, -3, 7, -8, 11, -12, 13, -19, 13, -27, 9, -35, 6, -30)
