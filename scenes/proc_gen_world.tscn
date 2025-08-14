@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckqfqa5565wpx" path="res://scripts/proc_gen_world.gd" id="1_ajf7a"]
 [ext_resource type="TileSet" uid="uid://cikokysmabvnd" path="res://data/tileset.tres" id="2_ocs8n"]
-[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_x3phy"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://Characters/player.tscn" id="3_x3phy"]
 
 [sub_resource type="Gradient" id="Gradient_2r0d6"]
 interpolation_mode = 1

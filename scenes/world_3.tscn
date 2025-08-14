@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://c4ulb01kap37s"]
+[gd_scene load_steps=14 format=4 uid="uid://c4ulb01kap37s"]
 
 [ext_resource type="Texture2D" uid="uid://d3fxsgocttcqp" path="res://assets/tiles/dirt_tileset.png" id="1_eqhrc"]
 [ext_resource type="Texture2D" uid="uid://5el78tk17y4s" path="res://assets/tiles/grass_tileset.png" id="2_leadx"]
 [ext_resource type="Texture2D" uid="uid://c2ty2n2detun5" path="res://assets/tiles/sand_tileset.png" id="3_l3r8l"]
 [ext_resource type="Texture2D" uid="uid://b8t8xpn03fpsk" path="res://assets/tiles/water_tileset.png" id="4_q3ffs"]
 [ext_resource type="PackedScene" uid="uid://bh7b82edcjrji" path="res://Tiles/tree.tscn" id="5_mk7rb"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://Characters/player.tscn" id="6_y3nqa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dapp0"]
 texture = ExtResource("1_eqhrc")
@@ -4841,3 +4842,8 @@ tile_map_data = PackedByteArray("AAD+/wsAAAAAAAAAAQAKAAQAAAAAAAAAAQD2/wEAAAAAAAA
 tile_set = SubResource("TileSet_u6k7y")
 
 [node name="cliff" type="TileMapLayer" parent="tilemap"]
+
+[node name="Player" parent="." instance=ExtResource("6_y3nqa")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.015, 2.015)
