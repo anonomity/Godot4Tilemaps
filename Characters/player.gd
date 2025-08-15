@@ -1,13 +1,10 @@
 extends CharacterBody2D
 
-
 @export var SPEED : float = 150.0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var animation_tree = $AnimationTree
 var direction : Vector2 = Vector2.ZERO
-
-
 
 func _ready():
 	animation_tree.active = true
@@ -21,14 +18,9 @@ func _physics_process(delta):
 		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
-
 	move_and_slide()
 
-
-
 func update_animation_parameters():
-	
-	
 	if Input.is_action_pressed("click") and (velocity == Vector2.ZERO):
 		animation_tree["parameters/conditions/is_moving"] = false
 		animation_tree["parameters/conditions/is_chopping"] = true

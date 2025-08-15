@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh7b82edcjrji"]
+[gd_scene load_steps=4 format=3 uid="uid://bh7b82edcjrji"]
 
 [ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="1_4g8ma"]
+[ext_resource type="Script" uid="uid://ipvfdoeflyfr" path="res://Tiles/Plants/tree.gd" id="1_uqkfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqkfy"]
 atlas = ExtResource("1_4g8ma")
 region = Rect2(194.756, 35.4082, 44.5589, 61.8589)
 
 [node name="tree" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_uqkfy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = SubResource("AtlasTexture_uqkfy")
 offset = Vector2(0, -27.655)
 
