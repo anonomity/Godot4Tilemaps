@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpf4hh5x1b85x"]
+
+[ext_resource type="Texture2D" uid="uid://qx7ytqbxqen1" path="res://Tiles/Lighting/torch_spritesheet.png" id="1_vvgnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysui5"]
+atlas = ExtResource("1_vvgnx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3spp"]
+atlas = ExtResource("1_vvgnx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfkj5"]
+atlas = ExtResource("1_vvgnx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyhpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysui5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3spp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfkj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3spp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_g058e"]
+colors = PackedColorArray(0.94, 0.94, 0.94, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uvwh"]
+gradient = SubResource("Gradient_g058e")
+fill = 1
+fill_from = Vector2(0.488889, 0.497436)
+fill_to = Vector2(0.834188, 0.148718)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tyhpj")
+autoplay = "default"
+frame_progress = 0.943395
+offset = Vector2(0.96, -5.925)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(4.47656, 4.41211)
+color = Color(0.989062, 0, 0.00802653, 1)
+energy = 1.55
+texture = SubResource("GradientTexture2D_4uvwh")
