@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://fl1tun4c0f76"]
 
-[ext_resource type="Script" uid="uid://ctcccjvjyuj2j" path="res://scripts/world.gd" id="1_kaqr7"]
-[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="2_u5uv6"]
-[ext_resource type="AudioStream" uid="uid://m7gfhjwc3hqw" path="res://sounds/hoeing.mp3" id="3_mag8w"]
-[ext_resource type="AudioStream" uid="uid://cdmsuua7ecc2d" path="res://sounds/pop.mp3" id="4_picgc"]
+[ext_resource type="Script" uid="uid://ctcccjvjyuj2j" path="res://scripts/world.gd" id="1_ujyrc"]
+[ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="2_dlhe5"]
+[ext_resource type="AudioStream" uid="uid://m7gfhjwc3hqw" path="res://sounds/hoeing.mp3" id="3_myqdy"]
+[ext_resource type="AudioStream" uid="uid://cdmsuua7ecc2d" path="res://sounds/pop.mp3" id="4_ebwp6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ligyu"]
-texture = ExtResource("2_u5uv6")
+texture = ExtResource("2_dlhe5")
 0:0/0 = 0
 0:0/0/custom_data_1 = true
 1:0/0 = 0
@@ -1816,20 +1816,20 @@ custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_ligyu")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ubn7"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_dlhe5")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_048bl"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_dlhe5")
 region = Rect2(192, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4mnv"]
-atlas = ExtResource("2_u5uv6")
+atlas = ExtResource("2_dlhe5")
 region = Rect2(176, 16, 16, 16)
 
 [node name="World" type="Node2D"]
 rotation = -0.000695561
-script = ExtResource("1_kaqr7")
+script = ExtResource("1_ujyrc")
 metadata/_edit_horizontal_guides_ = [79.0]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1923,7 +1923,7 @@ texture = SubResource("AtlasTexture_r4mnv")
 [node name="sound_effects" type="Node2D" parent="."]
 
 [node name="farm" type="AudioStreamPlayer2D" parent="sound_effects"]
-stream = ExtResource("3_mag8w")
+stream = ExtResource("3_myqdy")
 
 [node name="seed_pop" type="AudioStreamPlayer2D" parent="sound_effects"]
-stream = ExtResource("4_picgc")
+stream = ExtResource("4_ebwp6")

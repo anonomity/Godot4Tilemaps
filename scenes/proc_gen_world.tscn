@@ -1,14 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhptvycu3kb8x"]
 
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://proc_gen_world.gd" id="1_bdevv"]
-[ext_resource type="TileSet" uid="uid://0c6kxpetkkr0" path="res://data/tileset.tres" id="2_5e5w1"]
-[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_eowgc"]
-=======
-[ext_resource type="Script" uid="uid://c5xkep7tpjvva" path="res://scripts/proc_gen_world.gd" id="1_ajf7a"]
-[ext_resource type="TileSet" uid="uid://cikokysmabvnd" path="res://data/tileset.tres" id="2_ocs8n"]
-[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://scenes/player.tscn" id="3_x3phy"]
->>>>>>> Stashed changes
+[ext_resource type="Script" uid="uid://p4v3vmf7tiha" path="res://proc_gen_world.gd" id="1_bdevv"]
+[ext_resource type="TileSet" uid="uid://cikokysmabvnd" path="res://data/tileset.tres" id="2_5e5w1"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://Characters/player.tscn" id="3_eowgc"]
 
 [sub_resource type="Gradient" id="Gradient_y5bgd"]
 interpolation_mode = 1
@@ -47,17 +41,13 @@ layer_0/name = "water"
 layer_0/z_index = -1
 layer_1/name = "ground"
 layer_1/z_index = -1
-layer_1/tile_data = PackedInt32Array()
 layer_2/name = "ground2"
 layer_2/z_index = -1
-layer_2/tile_data = PackedInt32Array()
 layer_3/name = "cliff"
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 16
-layer_3/tile_data = PackedInt32Array()
 layer_4/name = "environment"
 layer_4/y_sort_enabled = true
-layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_eowgc")]
 SPEED = 300.0

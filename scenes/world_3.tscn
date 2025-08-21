@@ -1,20 +1,20 @@
 [gd_scene load_steps=25 format=4 uid="uid://c4ulb01kap37s"]
 
-[ext_resource type="Texture2D" uid="uid://d3fxsgocttcqp" path="res://assets/tiles/dirt_tileset.png" id="1_eqhrc"]
-[ext_resource type="Script" uid="uid://bp68kgmwbpmq2" path="res://scenes/world_3.gd" id="1_uvvy0"]
-[ext_resource type="Texture2D" uid="uid://5el78tk17y4s" path="res://assets/tiles/grass_tileset.png" id="2_leadx"]
-[ext_resource type="Texture2D" uid="uid://c2ty2n2detun5" path="res://assets/tiles/sand_tileset.png" id="3_l3r8l"]
-[ext_resource type="Texture2D" uid="uid://b8t8xpn03fpsk" path="res://assets/tiles/water_tileset.png" id="4_q3ffs"]
-[ext_resource type="PackedScene" uid="uid://bh7b82edcjrji" path="res://Tiles/tree.tscn" id="5_mk7rb"]
-[ext_resource type="PackedScene" uid="uid://cpf4hh5x1b85x" path="res://Tiles/Lighting/torch.tscn" id="6_u6k7y"]
-[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://Characters/player.tscn" id="6_y3nqa"]
-[ext_resource type="Script" uid="uid://lw6flrvj5io1" path="res://Tiles/environment_layer.gd" id="7_yenpu"]
-[ext_resource type="AudioStream" uid="uid://ccvjir0kjrb7l" path="res://sounds/chop.wav" id="8_panfc"]
-[ext_resource type="AudioStream" uid="uid://tk7k6buuorc7" path="res://sounds/tree_death.wav" id="9_uvvy0"]
-[ext_resource type="Texture2D" uid="uid://okmi3rysf426" path="res://assets/new_cliff.png" id="11_v2glw"]
+[ext_resource type="Script" uid="uid://bp68kgmwbpmq2" path="res://scenes/world_3.gd" id="1_3o6kg"]
+[ext_resource type="Texture2D" uid="uid://d3fxsgocttcqp" path="res://assets/tiles/dirt_tileset.png" id="2_qmap5"]
+[ext_resource type="Texture2D" uid="uid://5el78tk17y4s" path="res://assets/tiles/grass_tileset.png" id="3_t48wu"]
+[ext_resource type="Texture2D" uid="uid://c2ty2n2detun5" path="res://assets/tiles/sand_tileset.png" id="4_s0wui"]
+[ext_resource type="Texture2D" uid="uid://b8t8xpn03fpsk" path="res://assets/tiles/water_tileset.png" id="5_e71r7"]
+[ext_resource type="PackedScene" uid="uid://bh7b82edcjrji" path="res://Tiles/tree.tscn" id="6_8u5e6"]
+[ext_resource type="PackedScene" uid="uid://cpf4hh5x1b85x" path="res://Tiles/Lighting/torch.tscn" id="7_nnf2j"]
+[ext_resource type="Script" uid="uid://lw6flrvj5io1" path="res://Tiles/environment_layer.gd" id="8_fh4u8"]
+[ext_resource type="AudioStream" uid="uid://ccvjir0kjrb7l" path="res://sounds/chop.wav" id="9_a035i"]
+[ext_resource type="AudioStream" uid="uid://tk7k6buuorc7" path="res://sounds/tree_death.wav" id="10_f7e6a"]
+[ext_resource type="Texture2D" uid="uid://okmi3rysf426" path="res://assets/new_cliff.png" id="11_e1lp3"]
+[ext_resource type="PackedScene" uid="uid://nt74txyyhp2d" path="res://Characters/player.tscn" id="12_8a6f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dapp0"]
-texture = ExtResource("1_eqhrc")
+texture = ExtResource("2_qmap5")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 3
@@ -1568,7 +1568,7 @@ texture = ExtResource("1_eqhrc")
 11:11/0/terrains_peering_bit/top_right_corner = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aug4i"]
-texture = ExtResource("2_leadx")
+texture = ExtResource("3_t48wu")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
@@ -2989,7 +2989,7 @@ texture = ExtResource("2_leadx")
 11:11/0/terrains_peering_bit/top_side = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07ycy"]
-texture = ExtResource("3_l3r8l")
+texture = ExtResource("4_s0wui")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
@@ -4201,7 +4201,7 @@ texture = ExtResource("3_l3r8l")
 11:11/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i74t4"]
-texture = ExtResource("4_q3ffs")
+texture = ExtResource("5_e71r7")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -5065,12 +5065,12 @@ sources/2 = SubResource("TileSetAtlasSource_07ycy")
 sources/3 = SubResource("TileSetAtlasSource_i74t4")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y3nqa"]
-scenes/1/scene = ExtResource("5_mk7rb")
-scenes/2/scene = ExtResource("6_u6k7y")
+scenes/1/scene = ExtResource("6_8u5e6")
+scenes/2/scene = ExtResource("7_nnf2j")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uvvy0"]
 resource_name = "Plants"
-scenes/1/scene = ExtResource("5_mk7rb")
+scenes/1/scene = ExtResource("6_8u5e6")
 
 [sub_resource type="TileSet" id="TileSet_u6k7y"]
 sources/0 = SubResource("TileSetScenesCollectionSource_y3nqa")
@@ -5079,15 +5079,15 @@ sources/1 = SubResource("TileSetScenesCollectionSource_uvvy0")
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v2glw"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("8_panfc")
+stream_0/stream = ExtResource("9_a035i")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m3jh3"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("9_uvvy0")
+stream_0/stream = ExtResource("10_f7e6a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3jh3"]
-texture = ExtResource("11_v2glw")
+texture = ExtResource("11_e1lp3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -5157,7 +5157,7 @@ sources/0 = SubResource("TileSetAtlasSource_m3jh3")
 
 [node name="world_3" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_uvvy0")
+script = ExtResource("1_3o6kg")
 
 [node name="tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -5171,7 +5171,7 @@ tile_set = SubResource("TileSet_k5k6u")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAgD8/wIAAAAAAAAAAQD3////AAAAAAAAAQDv/wIAAAAAAAAAAgD6/wYAAQAAAAAAAQAHAAEAAQAAAAAAAQDz/wMAAQAAAAAAAQAAAAYAAAAAAAAAAgD6////AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_u6k7y")
-script = ExtResource("7_yenpu")
+script = ExtResource("8_fh4u8")
 
 [node name="ChopSound" type="AudioStreamPlayer" parent="tilemap/environment"]
 stream = SubResource("AudioStreamRandomizer_v2glw")
@@ -5182,7 +5182,7 @@ stream = SubResource("AudioStreamRandomizer_m3jh3")
 [node name="cliff" type="TileMapLayer" parent="tilemap"]
 tile_set = SubResource("TileSet_lkfvj")
 
-[node name="Player" parent="." instance=ExtResource("6_y3nqa")]
+[node name="Player" parent="." instance=ExtResource("12_8a6f0")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.015, 2.015)
