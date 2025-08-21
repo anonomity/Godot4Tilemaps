@@ -10,6 +10,7 @@ func on_child_entered(node):
 	if node is HarvestableTile:
 		node.chop_sound.connect(play_sound.bind(chop_sound))
 		node.death_sound.connect(play_sound.bind(tree_death_sound))
+		
 		node.set_type(HarvestableTile.Types.Palm)
 		
 		

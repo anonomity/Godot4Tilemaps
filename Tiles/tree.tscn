@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh7b82edcjrji"]
+[gd_scene load_steps=8 format=3 uid="uid://bh7b82edcjrji"]
 
 [ext_resource type="Texture2D" uid="uid://b7xcipud8gli" path="res://assets/tilemap1.png" id="1_4g8ma"]
 [ext_resource type="Script" uid="uid://ipvfdoeflyfr" path="res://Tiles/Plants/tree.gd" id="1_uqkfy"]
+[ext_resource type="Shader" uid="uid://b6k2v12oj8v5f" path="res://Tiles/destroy.gdshader" id="2_4sxqq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4sxqq"]
+noise_type = 4
+frequency = 1.0
+fractal_type = 2
+fractal_weighted_strength = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nydmw"]
+noise = SubResource("FastNoiseLite_4sxqq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nydmw"]
+resource_local_to_scene = true
+shader = ExtResource("2_4sxqq")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_nydmw")
+shader_parameter/dissolve_value = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqkfy"]
 atlas = ExtResource("1_4g8ma")
@@ -10,9 +26,11 @@ region = Rect2(194.756, 35.4082, 44.5589, 61.8589)
 [node name="tree" type="Area2D"]
 y_sort_enabled = true
 script = ExtResource("1_uqkfy")
+tree_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
+material = SubResource("ShaderMaterial_nydmw")
 texture = SubResource("AtlasTexture_uqkfy")
 offset = Vector2(0, -27.655)
 

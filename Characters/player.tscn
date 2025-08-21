@@ -545,15 +545,15 @@ advance_mode = 2
 advance_condition = &"is_chopping"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pxaul"]
-states/Start/position = Vector2(186.667, 114.667)
+states/Start/position = Vector2(183.467, 109.867)
 states/chop/node = SubResource("AnimationNodeBlendSpace2D_4m0gv")
-states/chop/position = Vector2(637.4, 284.2)
+states/chop/position = Vector2(634.2, 279.4)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_ychb7")
-states/idle/position = Vector2(378.4, 212.267)
+states/idle/position = Vector2(375.2, 207.467)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_5v436")
-states/walk/position = Vector2(662.533, 119.867)
+states/walk/position = Vector2(659.333, 115.067)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_pmqne"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_l4f8u"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fa30v"), "idle", "chop", SubResource("AnimationNodeStateMachineTransition_p728j"), "chop", "idle", SubResource("AnimationNodeStateMachineTransition_5slg2"), "chop", "walk", SubResource("AnimationNodeStateMachineTransition_cbmiu"), "walk", "chop", SubResource("AnimationNodeStateMachineTransition_w3rah")]
-graph_offset = Vector2(102, 125)
+graph_offset = Vector2(78, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eovys"]
 radius = 12.0
@@ -586,13 +586,12 @@ parameters/conditions/is_chopping = false
 parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
 parameters/chop/blend_position = Vector2(-0.377672, 0.356)
-parameters/idle/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(0.0896287, 0.386877)
 parameters/walk/blend_position = false
 
 [node name="ToolInteractArea" type="Area2D" parent="."]
 script = ExtResource("3_vb825")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToolInteractArea"]
-position = Vector2(-3, -5)
 shape = SubResource("CircleShape2D_eovys")
 disabled = true
