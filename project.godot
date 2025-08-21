@@ -22,10 +22,6 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Godot4Tilemaps"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/bitmask_automation/plugin.cfg")
-
 [input]
 
 farm={

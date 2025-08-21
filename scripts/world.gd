@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var nothing_rect = $CanvasLayer/Control/HBoxContainer/NothingRect
 @onready var farm_rect = $CanvasLayer/Control/HBoxContainer/FarmRect
 @onready var seed_rect = $CanvasLayer/Control/HBoxContainer/SeedRect
@@ -9,7 +8,6 @@ extends Node2D
 
 @onready var farm_sound = $sound_effects/farm
 @onready var seed_pop_sound = $sound_effects/seed_pop
-
 
 @onready var rects = [nothing_rect, farm_rect,seed_rect]
 
@@ -32,7 +30,6 @@ var source_id = 0
 var atlas_coords= Vector2(11,1)
 var final_seed_level = 3
 
-
 #Custom Datas
 var is_farmable_custom_data= "farmable"
 var is_hoable_custom_data = "hoeable"
@@ -41,7 +38,6 @@ func _ready():
 	farm_rect.color = invisible_hex
 	nothing_rect.color = highlight_hex
 	seed_rect.color = invisible_hex
-
 
 func _input(InputEvent):
 	if Input.is_action_just_pressed("farm"):
@@ -53,7 +49,6 @@ func _input(InputEvent):
 	if Input.is_action_just_pressed("click"):
 		handle_click()
 	
-
 func highlight_rect(rect_to_highlight, mode):
 	for rect in rects:
 		if rect == rect_to_highlight:
@@ -85,7 +80,6 @@ func check_custom_data(mouse_pos, custom_data_variable,layer):
 	else:
 		return false
 		
-
 func handle_seed(pos, level, atlas):
 	tile_map.set_cell(seed_layer,pos,source_id,atlas)
 	await get_tree().create_timer(5.0).timeout
